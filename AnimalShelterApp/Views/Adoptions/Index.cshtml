@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AnimalShelterApp.Models.Adoption>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DateAdopted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Animal.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Family.FamilyName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateAdopted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Animal.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Family.FamilyName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AdoptionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AdoptionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AdoptionID })
+        </td>
+    </tr>
+}
+
+</table>

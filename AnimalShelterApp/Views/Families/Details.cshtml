@@ -1,0 +1,58 @@
+﻿@model AnimalShelterApp.Models.Family
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Family</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HasFence)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasFence)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasOtherPets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasOtherPets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasSmallChildren)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasSmallChildren)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FamilyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FamilyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FamilyID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

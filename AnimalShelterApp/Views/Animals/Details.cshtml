@@ -1,0 +1,49 @@
+﻿<link href="~/Content/animalindex.css" rel="stylesheet" />
+
+@model AnimalShelterApp.Models.Animal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="jumbotron"></div>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="thumbnail">
+                <div class="caption">
+                    @*<p>
+                    @Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(model => model.Type)
+                </p>*@
+
+                    <p>
+                        @Html.DisplayNameFor(model => model.Breed):@Html.DisplayFor(model => model.Breed)
+                    </p>
+
+
+                    <p>
+                        @Html.DisplayNameFor(model => model.Age): @Html.DisplayFor(model => model.Age)
+                    </p>
+
+
+                    <p>
+                        @Html.DisplayNameFor(model => model.PetName):@Html.DisplayFor(model => model.PetName)
+                    </p>
+
+                    <p>
+                        @Html.DisplayNameFor(model => model.Gender): @Html.DisplayFor(model => model.Gender)
+                    </p>
+
+                    <p>
+                        @Html.DisplayNameFor(model => model.Photo): <img src="@Html.DisplayFor(model => model.Photo)" height="100" width="100" />
+                    </p>
+
+
+                    <p>
+                        <a class="btn btn-default" href=" @Url.Action( "Edit", new { id = Model.PetID })">Edit</a>
+                        <a class="btn btn-default" href=" @Url.Action("Index", "Animals")">Go back</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+</div>

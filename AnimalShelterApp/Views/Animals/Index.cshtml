@@ -1,0 +1,60 @@
+﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js">
+</script>
+
+<link href="~/Content/animalindex.css" rel="stylesheet" />
+
+
+@model IEnumerable<AnimalShelterApp.Models.Animal>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+   <a class="btn btn-default" href=" @Url.Action("Create", "Animals")">Create New</a>
+</p>
+<div class="row">
+
+
+
+
+    @foreach (var item in Model)
+    {
+        <div class="animated flipInY">
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <P>
+                            @Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(modelItem => item.Type)
+                        </P>
+                        <p>
+                            @Html.DisplayNameFor(model => model.Breed): @Html.DisplayFor(modelItem => item.Breed)
+                        </p>
+                        @*<p>
+                                @Html.DisplayNameFor(model => model.Age): @Html.DisplayFor(modelItem => item.Age)
+                            </p>
+                            <p>
+                                @Html.DisplayNameFor(model => model.PetName): @Html.DisplayFor(modelItem => item.PetName)
+                            </p>
+                            <p>
+                                @Html.DisplayNameFor(model => model.Gender):@Html.DisplayFor(modelItem => item.Gender)
+                            </p>
+                            <p>
+                                @Html.DisplayNameFor(model => model.Photo):<img src="@Html.DisplayFor(modelItem => item.Photo) " height="100" width="100" />
+                            </p>*@
+                        <p>
+                            <a class="btn btn-default" href=@Url.Action( "Edit", new { id = item.PetID })>Edit</a>
+                            <a class="btn btn-default" href=@Url.Action("Details", new { id = item.PetID })>Details</a>
+                            <a class="btn btn-default" href=@Url.Action("Delete", new { id = item.PetID })>Delete</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+

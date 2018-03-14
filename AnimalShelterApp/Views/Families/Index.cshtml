@@ -1,0 +1,57 @@
+﻿@model IEnumerable<AnimalShelterApp.Models.Family>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HasFence)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasOtherPets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasSmallChildren)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FamilyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasFence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasOtherPets)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasSmallChildren)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FamilyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FamilyID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FamilyID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FamilyID })
+        </td>
+    </tr>
+}
+
+</table>
